@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>STAR Kids Absensi 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Nunito', 'system-ui', 'sans-serif'],
+        display: ['Fredoka', 'Nunito', 'sans-serif'],
+      },
+      colors: {
+        sun: '#FFD93D', sky: '#4FC3F7', mint: '#43E97B',
+        coral: '#FF6B6B', grape: '#7C5CE6', bubble: '#FF6EC7',
+        ink: '#2D3250', muted: '#8896B0',
+      },
+      boxShadow: {
+        soft: '0 6px 24px -8px rgba(124,92,230,.35)',
+        glow: '0 18px 50px -12px rgba(255,107,107,.45)',
+        card: '0 8px 28px -10px rgba(45,50,80,.18)',
+        float: '0 20px 60px -20px rgba(70,40,160,.45)',
+      },
+      animation: {
+        wiggle: 'wiggle 2.4s ease-in-out infinite',
+        'pop-in': 'popIn .4s cubic-bezier(.34,1.56,.64,1)',
+        'float-blob': 'floatBlob 6s ease-in-out infinite',
+      },
+      keyframes: {
+        wiggle: {'0%,100%':{transform:'rotate(0)'},'25%':{transform:'rotate(-6deg)'},'75%':{transform:'rotate(6deg)'}},
+        popIn: {'0%':{transform:'scale(.85)',opacity:'0'},'100%':{transform:'scale(1)',opacity:'1'}},
+        floatBlob: {'0%,100%':{transform:'translate(0,0) scale(1)'},'50%':{transform:'translate(8px,-12px) scale(1.04)'}},
+      },
+    }
+  }
+}
+</script>
+<style>
+  body{
+    font-family:'Nunito',sans-serif;color:#2D3250;background:#F5F7FF;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(255,217,61,.22), transparent 42%),
+      radial-gradient(circle at 88% 12%, rgba(255,110,199,.22), transparent 45%),
+      radial-gradient(circle at 82% 85%, rgba(67,233,123,.18), transparent 42%),
+      radial-gradient(circle at 18% 88%, rgba(79,195,247,.22), transparent 45%);
+    background-attachment:fixed;
+  }
+  .font-display{font-family:'Fredoka','Nunito',sans-serif;letter-spacing:-.01em}
+  .grad-hero{background:linear-gradient(135deg,#FF6B6B,#FFB347 50%,#FF6EC7)}
+  .grad-primary{background:linear-gradient(135deg,#7C5CE6,#A36BE6)}
+  .grad-success{background:linear-gradient(135deg,#43E97B,#38F9D7)}
+  .grad-sky{background:linear-gradient(135deg,#4FC3F7,#7C5CE6)}
+  .grad-bubble{background:linear-gradient(135deg,#FF6EC7,#A78BFA)}
+  .grad-sun{background:linear-gradient(135deg,#FFD93D,#FF9A3C)}
+  .page{display:none}.page.active{display:block}
+  .ic{width:1em;height:1em;display:inline-block;vertical-align:-.125em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</head>
+<body class="min-h-screen pb-28">
+
+<!-- ICONS (sprite) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></symbol>
+  <symbol id="i-user-plus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></symbol>
+  <symbol id="i-party" viewBox="0 0 24 24"><path d="M5.8 11.3 2 22l10.7-3.8M4 3h.01M22 8h.01M15 2h.01M22 20h.01"/><path d="m22 2-7.5 7.5L19 14l-4-4Z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19a4.5 4.5 0 1 0 0-9c-.31 0-.61.03-.9.1A6 6 0 1 0 5 17.5"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></symbol>
+</svg>
+
+<!-- HEADER -->
+<header class="sticky top-0 z-40 text-white shadow-float grad-primary">
+  <div class="absolute inset-0 opacity-20 pointer-events-none overflow-hidden">
+    <div class="absolute -top-8 -left-6 w-32 h-32 rounded-full bg-sun blur-2xl animate-float-blob"></div>
+    <div class="absolute -bottom-10 right-10 w-40 h-40 rounded-full bg-bubble blur-3xl animate-float-blob" style="animation-delay:1.5s"></div>
+  </div>
+  <div class="relative max-w-2xl mx-auto px-4 py-3.5 flex items-center gap-3">
+    <div class="w-11 h-11 rounded-2xl bg-white/20 backdrop-blur grid place-items-center text-2xl animate-wiggle">⭐</div>
+    <div class="flex-1 min-w-0">
+      <h1 class="font-display text-lg font-bold leading-tight">STAR Kids Absensi</h1>
+      <p class="text-[10.5px] uppercase tracking-[0.18em] opacity-80 font-bold">Pertemuan Ibadah 2025</p>
+    </div>
+    <button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/15 hover:bg-white/25 border border-white/25 text-xs font-extrabold">
+      <span class="w-2 h-2 rounded-full bg-emerald-300 animate-pulse"></span>Sync
+    </button>
+  </div>
+</header>
+
+<main class="max-w-2xl mx-auto px-4 pt-5 space-y-4">
+
+  <!-- PAGE: ABSEN -->
+  <div id="page-absen" class="page active space-y-4">
+    <section class="relative overflow-hidden rounded-3xl grad-hero p-6 text-white shadow-glow">
+      <div class="absolute -right-6 -top-6 text-7xl opacity-25 rotate-12 select-none">✨</div>
+      <div class="absolute -right-2 bottom-2 text-5xl opacity-20 select-none">🌟</div>
+      <div class="relative">
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/25 backdrop-blur text-[10px] font-extrabold uppercase tracking-wider">
+          <svg class="ic"><use href="#i-cal"/></svg> Pertemuan Bulan Ini
+        </div>
+        <h2 class="font-display text-2xl font-bold mt-3">Hai, STAR Kids! 👋</h2>
+        <p class="text-sm font-semibold opacity-95 mt-1">Cari namamu & tandai kehadiran hari ini ✨</p>
+      </div>
+    </section>
+
+    <section class="rounded-3xl bg-white p-5 shadow-card border border-slate-200/60">
+      <div class="flex items-center gap-2 mb-1">
+        <div class="w-8 h-8 rounded-xl grad-bubble grid place-items-center text-white">
+          <svg class="ic"><use href="#i-search"/></svg>
+        </div>
+        <div>
+          <h3 class="font-display font-bold text-base">Cari Nama Star</h3>
+          <p class="text-xs text-muted font-semibold">Ketik nama panggilan atau nama lengkap</p>
+        </div>
+      </div>
+      <div class="relative mt-3">
+        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xl pointer-events-none">🧒</span>
+        <input id="q" placeholder="Contoh: Nadia, Reno..." class="w-full pl-12 pr-11 py-3.5 rounded-2xl bg-slate-100 border-2 border-slate-200 focus:border-grape focus:bg-white focus:ring-4 focus:ring-grape/15 outline-none text-base font-bold transition"/>
+        <button id="clearBtn" class="hidden absolute right-3 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-slate-200 hover:bg-slate-300 grid place-items-center"><svg class="ic"><use href="#i-x"/></svg></button>
+      </div>
+      <ul id="results" class="mt-3 rounded-2xl border border-slate-200 overflow-hidden bg-white shadow-soft hidden"></ul>
+      <div id="empty" class="mt-4 text-center py-6 hidden">
+        <div class="text-5xl mb-2 animate-wiggle">🔎</div>
+        <p class="font-display font-bold">Nama belum ditemukan</p>
+        <p class="text-xs text-muted font-semibold mt-1">Daftar Star baru di bawah ya! 🌱</p>
+      </div>
+      <div id="idle" class="mt-4 rounded-2xl bg-slate-100/70 p-6 text-center">
+        <div class="text-5xl mb-2 animate-wiggle inline-block">🌟</div>
+        <p class="font-display font-bold text-base">Siap Absensi!</p>
+        <p class="text-xs text-muted font-semibold mt-1 leading-relaxed">Ketik namamu di kotak di atas.<br/>Nama akan dicari otomatis. 😊</p>
+      </div>
+    </section>
+
+    <div id="confirmedWrap" class="hidden space-y-3">
+      <section class="relative overflow-hidden rounded-3xl grad-success p-5 text-white shadow-glow animate-pop-in">
+        <div class="flex items-center gap-4">
+          <div id="confAv" class="w-16 h-16 rounded-full bg-white/30 backdrop-blur border-[3px] border-white/60 grid place-items-center font-extrabold text-lg"></div>
+          <div class="flex-1 min-w-0">
+            <p class="text-[11px] uppercase font-extrabold tracking-wider opacity-90">Hadir Hari Ini 🎉</p>
+            <h3 id="confName" class="font-display text-xl font-bold leading-tight truncate"></h3>
+            <p id="confSub" class="text-xs font-bold opacity-90 mt-0.5"></p>
+          </div>
+          <svg class="ic text-5xl drop-shadow"><use href="#i-check"/></svg>
+        </div>
+      </section>
+      <div class="grid grid-cols-2 gap-3">
+        <button class="flex items-center justify-center gap-2 py-3.5 rounded-2xl grad-primary text-white font-extrabold shadow-soft active:scale-95 transition"><svg class="ic"><use href="#i-print"/></svg> Cetak Label</button>
+        <button id="nextBtn" class="flex items-center justify-center gap-2 py-3.5 rounded-2xl bg-slate-100 text-ink font-extrabold border-2 border-slate-200 active:scale-95 transition"><svg class="ic"><use href="#i-party"/></svg> Berikutnya</button>
+      </div>
+    </div>
+
+    <section class="rounded-3xl bg-white shadow-card border border-slate-200/60 overflow-hidden">
+      <div class="grad-bubble text-white px-5 py-4 flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-white/25 grid place-items-center text-xl">🌱</div>
+        <div>
+          <h3 class="font-display font-bold">Pendaftaran Star Baru</h3>
+          <p class="text-[11px] font-bold opacity-90">Isi data lengkap di bawah ini ya!</p>
+        </div>
+      </div>
+      <form class="p-5 space-y-3" onsubmit="event.preventDefault()">
+        <div><label class="lbl">Nama Lengkap ✨</label><input class="inp" placeholder="Nama lengkap Star"/></div>
+        <div><label class="lbl">Nama Panggilan 🏷️</label><input class="inp" placeholder="Nama panggilan"/></div>
+        <div class="grid grid-cols-2 gap-3">
+          <div><label class="lbl">Orang Tua 👨‍👩‍👦</label><input class="inp" placeholder="Bu / Pak..."/></div>
+          <div><label class="lbl">No. WhatsApp 📱</label><input class="inp" placeholder="08xx..."/></div>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div><label class="lbl">Tanggal Lahir 🎂</label><input type="date" class="inp"/></div>
+          <div><label class="lbl">Jenis Kelamin 👦👧</label>
+            <select class="inp"><option>Pilih...</option><option>Laki-laki</option><option>Perempuan</option></select>
+          </div>
+        </div>
+        <div><label class="lbl">Kelompok 🌈</label>
+          <select class="inp"><option>Pilih group...</option><option>⭐ Group A</option><option>🌟 Group B</option><option>✨ Group C</option></select>
+        </div>
+        <button class="w-full mt-2 py-3.5 rounded-2xl grad-hero text-white font-extrabold shadow-glow active:scale-[0.98] transition flex items-center justify-center gap-2">
+          <svg class="ic"><use href="#i-user-plus"/></svg> Daftar, Hadir & Cetak Label!
+        </button>
+      </form>
+    </section>
+  </div>
+
+  <!-- PAGE: ANGGOTA -->
+  <div id="page-anggota" class="page">
+    <section class="rounded-3xl bg-white shadow-card border border-slate-200/60 overflow-hidden">
+      <div class="grad-sky text-white px-5 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-2"><svg class="ic"><use href="#i-clipboard"/></svg><span class="font-display font-bold">Daftar Anggota STAR</span></div>
+        <span class="px-2.5 py-1 rounded-full bg-white/25 text-xs font-extrabold" id="memCount">0</span>
+      </div>
+      <div class="p-4">
+        <div class="relative mb-3">
+          <svg class="ic absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"><use href="#i-search"/></svg>
+          <input placeholder="Cari anggota..." class="inp pl-10"/>
+        </div>
+        <ul id="memList" class="divide-y divide-slate-200"></ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- PAGE: SETTING -->
+  <div id="page-set" class="page space-y-4">
+    <section class="rounded-3xl bg-white shadow-card border border-slate-200/60 overflow-hidden">
+      <div class="grad-primary text-white px-5 py-4 flex items-center gap-2"><svg class="ic"><use href="#i-settings"/></svg><span class="font-display font-bold">Pengaturan</span></div>
+      <ul id="setList"></ul>
+    </section>
+    <section class="rounded-3xl bg-white shadow-card border border-slate-200/60 p-5">
+      <div class="flex items-center gap-2 mb-3"><svg class="ic text-coral"><use href="#i-heart"/></svg><h3 class="font-display font-bold">Tentang Aplikasi</h3></div>
+      <div class="grid grid-cols-2 gap-3" id="aboutGrid"></div>
+    </section>
+  </div>
+
+</main>
+
+<!-- BOTTOM NAV -->
+<nav class="fixed bottom-0 inset-x-0 z-40 bg-white/90 backdrop-blur border-t border-slate-200 shadow-float">
+  <div class="max-w-2xl mx-auto grid grid-cols-3" id="nav"></div>
+</nav>
+
+<style>
+  .lbl{display:block;font-size:11px;font-weight:800;color:#8896B0;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+  .inp{width:100%;padding:10px 12px;border-radius:12px;background:#F1F5F9;border:2px solid #E2E8F0;font-size:14px;font-weight:700;color:#2D3250;outline:none;transition:.15s;font-family:'Nunito',sans-serif}
+  .inp:focus{border-color:#7C5CE6;background:#fff;box-shadow:0 0 0 4px rgba(124,92,230,.15)}
+  .ic{width:18px;height:18px}
+</style>
+
+<script>
+const SAMPLE=[
+  {id:1,nick:'Nadia',full:'Nadia Putri Anjani',group:'A',parent:'Bu Lina'},
+  {id:2,nick:'Reno',full:'Reno Sakti Pratama',group:'B',parent:'Pak Joko'},
+  {id:3,nick:'Kira',full:'Kira Maharani',group:'C',parent:'Bu Sari'},
+  {id:4,nick:'Bima',full:'Bima Adi Wijaya',group:'A',parent:'Pak Andi'},
+  {id:5,nick:'Luna',full:'Luna Kayla Sofia',group:'B',parent:'Bu Ratih'},
+  {id:6,nick:'Arka',full:'Arka Daniswara',group:'C',parent:'Pak Hendro'},
+];
+const GRADS=['grad-hero','grad-primary','grad-success','grad-sky','grad-bubble','grad-sun'];
+const GCHIP={A:'bg-emerald-100 text-emerald-700',B:'bg-sky-100 text-sky-700',C:'bg-amber-100 text-amber-700'};
+const initials=n=>n.split(' ').map(p=>p[0]).slice(0,2).join('').toUpperCase();
+const avGrad=n=>{let h=0;for(const c of n)h=(h*31+c.charCodeAt(0))>>>0;return GRADS[h%GRADS.length]};
+
+// search
+const q=document.getElementById('q'),results=document.getElementById('results'),empty=document.getElementById('empty'),idle=document.getElementById('idle'),clearBtn=document.getElementById('clearBtn');
+const confirmedWrap=document.getElementById('confirmedWrap');
+function pickMember(m){
+  confirmedWrap.classList.remove('hidden');
+  document.getElementById('confAv').textContent=initials(m.nick);
+  document.getElementById('confName').textContent=m.full;
+  document.getElementById('confSub').textContent=`Group ${m.group} · ${m.parent}`;
+  results.classList.add('hidden');
+}
+function reset(){q.value='';confirmedWrap.classList.add('hidden');clearBtn.classList.add('hidden');results.classList.add('hidden');empty.classList.add('hidden');idle.classList.remove('hidden')}
+document.getElementById('nextBtn').onclick=reset;
+clearBtn.onclick=reset;
+q.addEventListener('input',()=>{
+  const s=q.value.trim().toLowerCase();
+  clearBtn.classList.toggle('hidden',!s);
+  confirmedWrap.classList.add('hidden');
+  if(!s){idle.classList.remove('hidden');empty.classList.add('hidden');results.classList.add('hidden');return}
+  idle.classList.add('hidden');
+  const r=SAMPLE.filter(m=>m.nick.toLowerCase().includes(s)||m.full.toLowerCase().includes(s));
+  if(r.length===0){results.classList.add('hidden');empty.classList.remove('hidden');return}
+  empty.classList.add('hidden');results.classList.remove('hidden');
+  results.innerHTML=r.map(m=>`
+    <li data-id="${m.id}" class="flex items-center gap-3 px-3.5 py-3 cursor-pointer hover:bg-slate-50 border-b border-slate-200 last:border-0">
+      <div class="w-11 h-11 rounded-full grid place-items-center text-white font-extrabold text-sm shadow-soft ${avGrad(m.nick)}">${initials(m.nick)}</div>
+      <div class="flex-1 min-w-0"><p class="font-extrabold text-sm truncate">${m.full}</p><p class="text-[11px] text-muted font-semibold">Panggilan: ${m.nick} · Group ${m.group}</p></div>
+      <svg class="ic text-slate-400"><use href="#i-chevron-right"/></svg>
+    </li>`).join('');
+  results.querySelectorAll('li').forEach(li=>li.onclick=()=>pickMember(SAMPLE.find(x=>x.id==li.dataset.id)));
+});
+
+// members
+document.getElementById('memCount').textContent=SAMPLE.length;
+document.getElementById('memList').innerHTML=SAMPLE.map(m=>`
+  <li class="flex items-center gap-3 py-3">
+    <div class="w-10 h-10 rounded-full text-white grid place-items-center font-extrabold text-xs shadow-soft ${avGrad(m.nick)}">${initials(m.nick)}</div>
+    <div class="flex-1 min-w-0"><p class="font-extrabold text-sm truncate">${m.full}</p><p class="text-[11px] text-muted font-semibold">Panggilan: ${m.nick}</p></div>
+    <span class="text-[10px] font-extrabold px-2.5 py-1 rounded-full ${GCHIP[m.group]}">Group ${m.group}</span>
+  </li>`).join('');
+
+// settings
+const SET=[
+  {icon:'i-cloud',title:'Koneksi Google Sheet',sub:'Belum dikonfigurasi',btn:'Atur'},
+  {icon:'i-refresh',title:'Sinkronisasi Data',sub:'Refresh data dari sheet',btn:'Sync'},
+  {icon:'i-sparkles',title:'Status Koneksi',sub:'Terhubung dengan baik',btn:'Cek'},
+];
+document.getElementById('setList').innerHTML=SET.map(r=>`
+  <li class="flex items-center justify-between gap-3 px-5 py-3.5 border-b border-slate-200 last:border-0">
+    <div class="flex items-center gap-3 min-w-0">
+      <div class="w-9 h-9 rounded-xl bg-slate-100 text-grape grid place-items-center shrink-0"><svg class="ic"><use href="#${r.icon}"/></svg></div>
+      <div class="min-w-0"><p class="text-sm font-extrabold truncate">${r.title}</p><p class="text-[11px] text-muted font-semibold truncate">${r.sub}</p></div>
+    </div>
+    <button class="px-3.5 py-1.5 rounded-xl grad-primary text-white text-xs font-extrabold shadow-soft active:scale-95 transition">${r.btn}</button>
+  </li>`).join('');
+
+const ABOUT=[
+  {e:'📌',t:'STAR Absensi',s:'v3.1',g:'grad-hero'},
+  {e:'☁️',t:'Google Sheet',s:'Auto sync',g:'grad-sky'},
+  {e:'🏷️',t:'Label Nama',s:'50×80mm',g:'grad-success'},
+  {e:'💰',t:'100% Gratis',s:'Selamanya',g:'grad-bubble'},
+];
+document.getElementById('aboutGrid').innerHTML=ABOUT.map(c=>`
+  <div class="rounded-2xl p-3.5 border border-slate-200 bg-slate-50/60">
+    <div class="w-9 h-9 rounded-xl grid place-items-center text-lg text-white shadow-soft ${c.g}">${c.e}</div>
+    <p class="font-extrabold text-sm mt-2">${c.t}</p><p class="text-[11px] text-muted font-semibold">${c.s}</p>
+  </div>`).join('');
+
+// nav
+const NAV=[
+  {id:'absen',ico:'i-check',label:'Absensi'},
+  {id:'anggota',ico:'i-users',label:'Anggota'},
+  {id:'set',ico:'i-settings',label:'Setting'},
+];
+const navEl=document.getElementById('nav');
+function setTab(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  navEl.querySelectorAll('button').forEach(b=>{
+    const active=b.dataset.id===id;
+    b.querySelector('.pill').className='pill grid place-items-center w-11 h-11 rounded-2xl transition '+(active?'grad-primary text-white shadow-soft -translate-y-3':'text-slate-400');
+    b.querySelector('.lab').className='lab text-[10px] font-extrabold uppercase tracking-wider '+(active?'text-grape -mt-2':'text-slate-400');
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+navEl.innerHTML=NAV.map(n=>`
+  <button data-id="${n.id}" class="relative py-3 flex flex-col items-center gap-1">
+    <span class="pill grid place-items-center w-11 h-11 rounded-2xl text-slate-400"><svg class="ic" style="width:20px;height:20px"><use href="#${n.ico}"/></svg></span>
+    <span class="lab text-[10px] font-extrabold uppercase tracking-wider text-slate-400">${n.label}</span>
+  </button>`).join('');
+navEl.querySelectorAll('button').forEach(b=>b.onclick=()=>setTab(b.dataset.id));
+setTab('absen');
+</script>
+</body>
+</html>
