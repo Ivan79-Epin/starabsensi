@@ -633,8 +633,8 @@ let searchTimer=null;
 
 // ── INIT ──
 window.onload=()=>{
-  cfg=JSON.parse(localStorage.getItem('star_cfg')||'{}');
-  if(!cfg.sheetId||!cfg.scriptUrl){
+ const DEFAULT_SHEET_ID   = '1W-OrfEnTBnEtS7iCJcw_-DdCc3nKLzPvEtllBZRvowg';      
+const DEFAULT_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxrNKZlgslMlk9pouGLOdX-hchnlsVNJpmdPSgjIL7J8_VJfPj5M_xiHW2Ayzd_olgInw/exec'; 
     cfg={sheetId:'1W-OrfEnTBnEtS7iCJcw_-DdCc3nKLzPvEtllBZRvowg',scriptUrl:'https://script.google.com/macros/s/AKfycbxrNKZlgslMlk9pouGLOdX-hchnlsVNJpmdPSgjIL7J8_VJfPj5M_xiHW2Ayzd_olgInw/exec'};
     localStorage.setItem('star_cfg',JSON.stringify(cfg));
   }
